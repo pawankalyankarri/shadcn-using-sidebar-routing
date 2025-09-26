@@ -35,7 +35,7 @@ const App = () => {
               <BreadcrumbList>
               
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">
+                  <BreadcrumbLink href="/home/chart">
                     Building Your Application
                   </BreadcrumbLink>
                 </BreadcrumbItem>

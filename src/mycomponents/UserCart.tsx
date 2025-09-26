@@ -16,7 +16,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Lens } from "@/components/ui/lens";
 type ProductsType = {
   id: number;
   title: string;
@@ -32,7 +32,6 @@ type ProductsType = {
 
 const UserCart = () => {
   const [products, setProducts] = useState<ProductsType[]>([]);
-  const [show,setShow] = useState<boolean>(false)
 
   useEffect(() => {
     axios
@@ -56,7 +55,7 @@ const UserCart = () => {
             <CardHeader>
               <CardTitle className="capitalize p-1 font-bold">{item.category}</CardTitle>
               <CardDescription>
-                <img src={item.image} alt="" />
+                <Lens lensSize={100} ><img src={item.image} alt="" className="cursor-pointer" /></Lens>
               </CardDescription>
               <CardAction>
                 <Button onClick={handleAdd}>Add</Button>
@@ -75,7 +74,7 @@ const UserCart = () => {
             </CardContent>
             <CardFooter>
               <p>
-                <strong>Price :&nbsp;</strong>
+                <strong>Price :&nbsp; $</strong>
                 {item.price}
               </p>
             </CardFooter>
